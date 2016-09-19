@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>订车</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/function_assets/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="/static/function_assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/static/function_assets/css/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="/static/function_assets/js/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="/static/function_assets/lineicons/style.css">
+      <link href="/static/function_assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen"/>
+    
+    <!-- Custom styles for this template -->
+    <link href="/static/function_assets/css/style.css" rel="stylesheet">
+    <link href="/static/function_assets/css/style-responsive.css" rel="stylesheet">
+
+    <style type="text/css">
+        html, body, #main-content, .wrapper, #map-canvas {height: 100%}
+        #map-canvas{
+            z-index: 98;
+        }
+        #right-side{
+            position: absolute;
+            right: 5px;
+            top: 0px;
+            z-index: 99;
+        }
+    </style>
+
+    <script src="/static/function_assets/js/chart-master/Chart.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+<body>
+  <section id="container" >
+      <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg">
+              <div class="sidebar-toggle-box">
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            <!--logo start-->
+            <a href="/function" class="logo"><b>新能源汽车</b></a>
+            <!--logo end-->
+            <!--<div class="nav notify-row" id="top_menu">-->
+                <!--&lt;!&ndash;  notification start &ndash;&gt;-->
+                <!--<ul class="nav top-menu">-->
+                    <!--&lt;!&ndash; settings start &ndash;&gt;-->
+                    <!--<li class="dropdown">-->
+                        <!--<a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">-->
+                            <!--<i class="fa fa-tasks"></i>-->
+                            <!--<span class="badge bg-theme">4</span>-->
+                        <!--</a>-->
+                        <!--<ul class="dropdown-menu extended tasks-bar">-->
+                            <!--<div class="notify-arrow notify-arrow-green"></div>-->
+                            <!--<li>-->
+                                <!--<p class="green">You have 4 pending tasks</p>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="index.html#">-->
+                                    <!--<div class="task-info">-->
+                                        <!--<div class="desc">DashGum Admin Panel</div>-->
+                                        <!--<div class="percent">40%</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="progress progress-striped">-->
+                                        <!--<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">-->
+                                            <!--<span class="sr-only">40% Complete (success)</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="index.html#">-->
+                                    <!--<div class="task-info">-->
+                                        <!--<div class="desc">Database Update</div>-->
+                                        <!--<div class="percent">60%</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="progress progress-striped">-->
+                                        <!--<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">-->
+                                            <!--<span class="sr-only">60% Complete (warning)</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="index.html#">-->
+                                    <!--<div class="task-info">-->
+                                        <!--<div class="desc">Product Development</div>-->
+                                        <!--<div class="percent">80%</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="progress progress-striped">-->
+                                        <!--<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">-->
+                                            <!--<span class="sr-only">80% Complete</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="index.html#">-->
+                                    <!--<div class="task-info">-->
+                                        <!--<div class="desc">Payments Sent</div>-->
+                                        <!--<div class="percent">70%</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="progress progress-striped">-->
+                                        <!--<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">-->
+                                            <!--<span class="sr-only">70% Complete (Important)</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li class="external">-->
+                                <!--<a href="#">See All Tasks</a>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                    <!--&lt;!&ndash; settings end &ndash;&gt;-->
+                    <!--&lt;!&ndash; inbox dropdown start&ndash;&gt;-->
+                    <!--<li id="header_inbox_bar" class="dropdown">-->
+                        <!--<a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">-->
+                            <!--<i class="fa fa-envelope-o"></i>-->
+                            <!--<span class="badge bg-theme">5</span>-->
+                        <!--</a>-->
+                        <!--<ul class="dropdown-menu extended inbox">-->
+                            <!--<div class="notify-arrow notify-arrow-green"></div>-->
+                            <!--<li>-->
+                                <!--<p class="green">You have 5 new messages</p>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="index.html#">-->
+                                    <!--<span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>-->
+                                    <!--<span class="subject">-->
+                                    <!--<span class="from">Zac Snider</span>-->
+                                    <!--<span class="time">Just now</span>-->
+                                    <!--</span>-->
+                                    <!--<span class="message">-->
+                                        <!--Hi mate, how is everything?-->
+                                    <!--</span>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="index.html#">-->
+                                    <!--<span class="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"></span>-->
+                                    <!--<span class="subject">-->
+                                    <!--<span class="from">Divya Manian</span>-->
+                                    <!--<span class="time">40 mins.</span>-->
+                                    <!--</span>-->
+                                    <!--<span class="message">-->
+                                     <!--Hi, I need your help with this.-->
+                                    <!--</span>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="index.html#">-->
+                                    <!--<span class="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"></span>-->
+                                    <!--<span class="subject">-->
+                                    <!--<span class="from">Dan Rogers</span>-->
+                                    <!--<span class="time">2 hrs.</span>-->
+                                    <!--</span>-->
+                                    <!--<span class="message">-->
+                                        <!--Love your new Dashboard.-->
+                                    <!--</span>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="index.html#">-->
+                                    <!--<span class="photo"><img alt="avatar" src="assets/img/ui-sherman.jpg"></span>-->
+                                    <!--<span class="subject">-->
+                                    <!--<span class="from">Dj Sherman</span>-->
+                                    <!--<span class="time">4 hrs.</span>-->
+                                    <!--</span>-->
+                                    <!--<span class="message">-->
+                                        <!--Please, answer asap.-->
+                                    <!--</span>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="index.html#">See all messages</a>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                    <!--&lt;!&ndash; inbox dropdown end &ndash;&gt;-->
+                <!--</ul>-->
+                <!--&lt;!&ndash;  notification end &ndash;&gt;-->
+            <!--</div>-->
+
+            <div class="top-menu">
+            	<ul class="nav pull-right top-menu">
+                    <li><button id="new-order" class="logout" type="button">新订单</button></li>
+                    <li><a class="logout" href="/quit">退出</a></li>
+            	</ul>
+            </div>
+        </header>
+      <!--header end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+              
+              	  <p class="centered"><a href="profile.html"><img src="/static/function_assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <h5 class="centered">{{function_user_name}}</h5>
+              	  	
+                  <li class="mt">
+                      <a class="active" href="/function">
+                          <i class="fa fa-dashboard"></i>
+                          <span>订车</span>
+                      </a>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-desktop"></i>
+                          <span>订单</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="/order_finished">已完成订单</a></li>
+                          <li><a  href="/order_unfinished">未完成订单</a></li>
+                      </ul>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-cogs"></i>
+                          <span>推荐</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="/order_merge?order_id=0">订单推荐</a></li>
+                          <li><a  href="/friend_recommendation">好友推荐</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-tasks"></i>
+                          <span>好友</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="/friend_manage">好友管理</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-tasks"></i>
+                          <span>优惠券</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="/order_groupon">优惠券管理</a></li>
+                      </ul>
+                  </li>
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+              <div id="map-canvas"></div>
+              <div id="right-side" style="display: none">
+                  <form class="form-login" role="form" action="/order" method="post">
+                      <h2 class="form-login-heading">新订单</h2>
+                      <div class="login-wrap">
+                        <div style="width: 100%;" class="input-group date form_datetime col-md-5" data-date="2015-10-25T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                            <input class="form-control" size="16" type="text" value="" readonly name="order_time">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					        <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                        </div>
+                          <input type="hidden" id="dtp_input1" value="" />
+                          <br>
+                          <input id="input-start-point" class="form-control" type="text" placeholder="起点" name="order_start">
+                          <br>
+                          <input id="input-des-point" class="form-control" type="text" placeholder="终点" name="order_des">
+                          <br>
+                          <p>请选择本单的乘车人数：</p>
+                          <select class="form-control" name="order_people">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                          </select>
+                          <div class="checkbox">
+                            <label>
+                                <input id="checkdriver" type="checkbox" name="checkdriver" value="ok" checked=""> 可以驾驶新能源汽车
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                                <input id="checkshare" type="checkbox" name="checkshare" value="ok" checked=""> 愿意分享租赁新能源汽车
+                            </label>
+                          </div>
+                          <div class="modal-footer">
+                              <button id="close-right-side-button" type="button" class="btn btn-default">取消</button>
+                              <button id="order_submit" type="submit" class="btn btn-primary">确定</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </section>
+      </section>
+
+      <!--main content end-->
+      <!--footer start-->
+      <!--<footer class="site-footer">-->
+          <!--<div class="text-center">-->
+              <!--2014 - Alvarez.is-->
+              <!--<a href="index.html#" class="go-top">-->
+                  <!--<i class="fa fa-angle-up"></i>-->
+              <!--</a>-->
+          <!--</div>-->
+      <!--</footer>-->
+      <!--footer end-->
+  </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="/static/function_assets/js/jquery.js"></script>
+    <script src="/static/function_assets/js/jquery-1.8.3.min.js"></script>
+    <script src="/static/function_assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="/static/function_assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="/static/function_assets/js/jquery.scrollTo.min.js"></script>
+    <script src="/static/function_assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="/static/function_assets/js/jquery.sparkline.js"></script>
+
+
+    <!--common script for all pages-->
+    <script src="/static/function_assets/js/common-scripts.js"></script>
+    
+    <script type="text/javascript" src="/static/function_assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="/static/function_assets/js/gritter-conf.js"></script>
+
+    <!--script for this page-->
+    <script src="/static/function_assets/js/sparkline-chart.js"></script>    
+	<script src="/static/function_assets/js/zabuto_calendar.js"></script>
+    <script src="/static/function_assets/js/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="/static/function_assets/js/datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+    <script>
+        $("#order_submit").click(function() {
+            $(":checkbox").each(function() {
+                if($(this).attr("checked") == "checked") {
+                    $(this).val("1")
+                } else {
+                    $(this).attr("checked", true)
+                    $(this).val("0")
+                }
+            })
+        })
+
+    </script>
+
+	<script type="text/javascript">
+        $(document).ready(function () {
+        var unique_id = $.gritter.add({
+            // (string | mandatory) the heading of the notification
+            title: '欢迎租赁新能源汽车',
+            // (string | mandatory) the text inside the notification
+            text: '点击地图上的租赁点或顶部订车按钮开始订车',
+            // (string | optional) the image to display on the left
+            image: '/static/function_assets/img/ui-sam.jpg',
+            // (bool | optional) if you want it to fade out on its own or just sit there
+            sticky: true,
+            // (int | optional) the time you want it to be alive for before fading out
+            time: '',
+            // (string | optional) the class name you want to apply to that specific message
+            class_name: 'my-sticky-class'
+        });
+
+        return false;
+        });
+	</script>
+	
+	<script type="application/javascript">
+        $(document).ready(function () {
+            $("#date-popover").popover({html: true, trigger: "manual"});
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+        
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "text", label: "Special event", badge: "00"},
+                    {type: "block", label: "Regular event", }
+                ]
+            });
+        });
+        
+        
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+    </script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=51568ac075a5afdf5989ebbf2c2a52bf"></script>
+    <script type="text/javascript">
+    var map = new BMap.Map("map-canvas");
+    map.centerAndZoom("上海", 15);
+
+
+//     var packjson = [
+//         {
+//            "name" : "人民广场",
+//            "lng" : 121.4802,
+//            "lat" : 31.23944,
+//            "number" : 10
+//         }, {
+//            "name" : "常熟路",
+//            "lng" : 121.4577,
+//            "lat" : 31.21993,
+//            "number" : 8
+//         }
+//    ]
+    var packjson = {};
+
+    $.ajaxSetup({
+        async:false
+    })
+
+    $.getJSON("/static/json/stations.json", function(data) {
+        packjson.stations = data.stations;
+    });
+
+
+    var json_data = new Array();
+
+    for (var i = 0; i < packjson.stations.length; i++) {
+        json_data[i] = [packjson.stations[i].name, packjson.stations[i].lng, packjson.stations[i].lat, packjson.stations[i].number];
+    }
+
+    //    var json_data = [["人民广场", 121.4802, 31.23944], ["常熟路", 121.4577, 31.21993]];
+    var pointArray = new Array();
+    // for (var i = 0; i < json_data.length; i++) {
+    //   var marker = new BMap.Marker(new BMap.Point(json_data[i][0], json_data[i][1]));
+    //   map.addOverlay(marker);
+    //   pointArray[i] = new BMap.Point(json_data[i][0], json_data[i][1]);
+    // }
+    // map.setViewport(pointArray);
+    function addMarker(point_marker) {
+      map.addOverlay(point_marker);
+    }
+
+    pointNumber = json_data.length;
+    for (var i = 0; i < pointNumber; i++) {
+      pointArray[i] = new BMap.Marker(new BMap.Point(json_data[i][1], json_data[i][2]));
+      pointArray[i].setTitle(json_data[i][0]);
+    }
+
+    for (var i = 0; i < pointNumber; i++) {
+      addMarker(pointArray[i])
+    }
+
+    var opts = {
+        width: 200,
+        height: 100,
+        enableMessage: true
+    };
+
+    var content = "<div class='white-panel pn'>" +
+            "<div class='white-header'><h5>选择站点</h5></div>" +
+            "<button class='btn btn-small btn-theme04' id='start-position' type='button' onclick='chg_start(point_title)'>起点</button>" +
+            "<button class='btn btn-small btn-theme04' id='des-position' type='button' onclick='chg_des(point_title)'>终点</button>" +
+            "</div>"
+    function chg_start(e) {
+        $("#input-start-point").val(e);
+        $("#right-side").show();
+        map.closeInfoWindow();
+    }
+    function chg_des(e){
+        $("#input-des-point").val(e);
+        $("#right-side").show();
+        map.closeInfoWindow();
+    }
+
+    var point_title = new String()
+
+
+    function addClickHandler(content, marker) {
+      marker.addEventListener("click", function(e) {
+        openInfo(content, e)}
+      );
+    }
+
+    function openInfo(content, e) {
+      var p = e.target;
+        point_title = p.getTitle();
+      var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
+      var infoWindow = new BMap.InfoWindow(content, opts);
+      map.openInfoWindow(infoWindow, point);
+    }
+
+    for(var i = 0; i < pointNumber; i++) {
+      addClickHandler(content, pointArray[i]);
+    }
+
+  </script>
+
+  <script>
+      $(document).ready(function() {
+          $("#right-side").hide();
+          $("#new-order").click(function(){
+              if ($("#right-side").is(":hidden")) {
+                $("#right-side").show();
+                right_side_hide = false;}
+              else {
+                $("#right-side").hide();
+                  right_side_hide = true;}
+              }
+          );
+      });
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#close-right-side-button").click(function(){
+              $("#right-side").hide();
+          })
+      })
+  </script>
+
+  <script type="text/javascript">
+    var time = new Date();
+    var t = time.getFullYear()+"-"+(time.getMonth()+1)+"-"+time.getDate()+"-"+time.getHours()+":"+time.getMinutes();
+    $('.form_datetime').datetimepicker({
+        //language:  'fr',
+        weekStart: 1,
+        format: "yyyy-mm-dd-hh:ii",
+        startDate: t,
+        minuteStep: 10,
+        autoclose: true,
+    });
+    </script>
+
+  </body>
+</html>

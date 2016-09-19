@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hello Qunee for HTML5</title>
+<meta charset="utf-8">
+<script src="/static/js/qunee-min.js"></script>
+<script src="/static/js/shanghai-metro.js"></script>
+</head>
+<body onload="init();" style="text-align: center;">
+<label><input type="checkbox" onclick="onlanechange(event)">显示双车道</label>
+<label><input type="checkbox" onclick="onlayerchange(event)">显示路况信息</label>
+<div style="width: 1100px; height: 800px; margin: auto; border: solid 1px #EEE; text-align: left" id="canvas"></div>
+</body>
+</html>
